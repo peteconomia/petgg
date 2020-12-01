@@ -1,13 +1,13 @@
-#' Config geoms
-#' @describe configure geoms
+#' @title Config geoms
+#' @description configure geoms
 #' @import ggplot2
 
 set_geoms_defaults <- function(base_family) {
 
 	geoms <- gsub("geom_", "", ls(pattern = '^geom_', env = as.environment('package:ggplot2')))
 
-	primary_color <- unlist(pallete[["main"]][1])
-	secondary_color <- unlist(pallete[["main"]][2])
+	primary_color <- unlist(pallete[["main"]][8])[1]
+	secondary_color <- unlist(pallete[["main"]][8])[6]
 
 	for(geom in geoms[!geoms %in% c(
 		"bin2d",
@@ -40,6 +40,10 @@ set_geoms_defaults <- function(base_family) {
 
 	for(geom in c("line", "point", "vline", "hline", "smooth", "density", "path")) {
 		ggplot2::update_geom_defaults(geom, list(size = 1.1))
+	}
+
+	for(geom in c("smooth")) {
+		ggplot2::update_geom_defaults(geom, list(fill = secondary_color))
 	}
 
 	for(geom in c("text", "label")) {

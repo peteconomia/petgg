@@ -1,22 +1,18 @@
-petgg \| `ggplot2` tema
+petgg
 ================
 
 petgg é um tema para o pacote `ggplot2`
 
 ## Instalação
 
+Primeiro instale o pacote `devtools`. Para usuários Windows é necessário
+instalar o [RTools](https://cran.r-project.org/bin/windows/Rtools/)
+antes.
+
 ``` r
 install.packages("devtools")
 devtools::install_github("peteconomia/petgg")
 ```
-
-Requisitos:
-
--   Windows: instalar
-    [Rtools](https://cran.r-project.org/bin/windows/Rtools/)
-
--   Ubuntu:
-    `sudo apt install build-essential libcurl4-gnutls-dev libxml2-dev libssl-dev`
 
 ## Uso
 
@@ -36,20 +32,18 @@ library(petgg)
     ##     scale_colour_discrete, scale_colour_ordinal, scale_fill_discrete,
     ##     scale_fill_ordinal
 
-A função `petgg::set_theme()` aplica o tema. Para voltar ao tema inicial
-`petgg::reset()`
-
-> `petgg::reset()` não é um reset total, as cores não são setadas para o
-> padrão
+A função `petgg::set_theme()` aplica o tema.
 
 ``` r
 petgg::set_theme()
 
-ggplot(data = mpg) + 
-    geom_point(mapping = aes(x = displ, y = hwy, color = class))
+ggplot(mpg) + 
+    geom_point(aes(x = displ, y = hwy, color = class))
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> Para voltar
+ao tema inicial use `petgg::reset()`, não é um reset total, as cores não
+são setadas para o tema padrão.
 
 ## Configurações
 
@@ -62,18 +56,18 @@ Espaço ao redor do gráfico foi removido para aumentar a visibilidade
 
 > `numeric`
 
-> O tamanho padrão é `12`
+> Padrão é `12`
 
 ``` r
 petgg::set_theme(base_size = 22) # big !!!!
 
-ggplot(data = mpg) + 
-    geom_point(mapping = aes(x = displ, y = hwy, color = class))
+ggplot(mpg) + 
+    geom_point(aes(x = displ, y = hwy, color = class))
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
-> O tamanho da legenda é relativo a `base_size`
+O tamanho da legenda é relativo a `base_size`
 
 ### Fontes
 
@@ -81,7 +75,7 @@ ggplot(data = mpg) +
 
 > `character`
 
-> A fonte padrão é `Helvetica`
+> Padrão é `"Helvetica"`
 
 Para listar todas as fontes disponíveis que você pode utilizar:
 
@@ -103,8 +97,8 @@ names(pdfFonts())
 ``` r
 petgg::set_theme(base_family = "Courier")
 
-ggplot(data = diamonds) + 
-    geom_bar(mapping = aes(x = cut, fill = clarity), position = "dodge") +
+ggplot(diamonds) + 
+    geom_bar(aes(x = cut, fill = clarity), position = "dodge") +
     labs(title = "Courier Fonte")
 ```
 
@@ -116,13 +110,13 @@ ggplot(data = diamonds) +
 
 > `logical`
 
-> O padrão é `FALSE`
+> Padrão é `FALSE`
 
 ``` r
 petgg::set_theme(axis_title = TRUE)
 
 ggplot(diamonds, aes(depth, color = cut)) +
-    geom_density(alpha = 0.5)
+    geom_density()
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
@@ -133,13 +127,13 @@ ggplot(diamonds, aes(depth, color = cut)) +
 
 > `logical`
 
-> O padrão é `FALSE`
+> Padrão é `FALSE`
 
 ``` r
 petgg::set_theme(legend_title = TRUE)
 
 ggplot(diamonds, aes(depth, color = cut)) +
-    geom_density(alpha = 0.5)
+    geom_density()
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
@@ -150,14 +144,14 @@ ggplot(diamonds, aes(depth, color = cut)) +
 
 > `character` ou `numeric vector`
 
-> O padrão é `bottom`. Pode ser `top`, `right`, `bottom`, `left`, `none`
-> ou um par de coordenada, exemplo `c(0.9, 0.9)`
+> Padrão é `"bottom"`. Pode ser `"top"`, `"right"`, `"bottom"`,
+> `"left"`, `"none"` ou um par de coordenada, exemplo `c(0.9, 0.9)`
 
 ``` r
 petgg::set_theme(legend_position = "right")
 
-ggplot(diamonds, aes(price, colour = cut)) +
-    geom_freqpoly(binwidth = 500)
+ggplot(economics_long, aes(date, value01, colour = variable)) + 
+    geom_line()
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
@@ -168,13 +162,13 @@ ggplot(diamonds, aes(price, colour = cut)) +
 
 > `character`
 
-> O padrão é `horizontal`. Pode ser `vertical` ou `horizontal`
+> Padrão é `"horizontal"`. Pode ser `"vertical"` ou `"horizontal"`
 
 ``` r
 petgg::set_theme(legend_position = "right", legend_direction = "vertical")
 
-ggplot(diamonds, aes(price, colour = cut)) +
-    geom_freqpoly(binwidth = 500)
+ggplot(economics_long, aes(date, value01, colour = variable)) + 
+    geom_line()
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
@@ -184,13 +178,3 @@ ggplot(diamonds, aes(price, colour = cut)) +
 Para aplicar o tema para uma plotagem específica utilize
 `petgg::theme_petgg()`. A função aceita os mesmos argumentos de
 `petgg::set_theme()`
-
-``` r
-petgg::reset() # aplicando reset
-
-ggplot(data = mpg) + 
-    geom_point(mapping = aes(x = displ, y = hwy, color = class)) +
-    theme_petgg()
-```
-
-![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->

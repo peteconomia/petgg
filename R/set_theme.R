@@ -4,9 +4,9 @@
 #' @param base_family is a character, font family. Default is \code{"Helvetica"}
 #' @param base_line_size is a numeric, base size for line elements. Default is \code{0.5}
 #' @param base_rect_size is a numeric, base size for rect elements. Default is \code{0.5}
-#' @param axis_title is a bool, \code{TRUE} shows the axis title, \code{FALSE} hides. Default is \code{FALSE}
+#' @param axis_title is a logical, \code{TRUE} shows the axis title, \code{FALSE} hides. Default is \code{FALSE}
 #' @param legend_position is a character, control legend position. Default is \code{"bottom"}
-#' @param legend_title is bool, \code{TRUE} show the legend title. Default is \code{FALSE}
+#' @param legend_title is a logical, \code{TRUE} show the legend title. Default is \code{FALSE}
 #' @import ggplot2
 #' @usage
 #' petgg::set_theme()
@@ -27,8 +27,7 @@ set_theme <- function(base_size = config$base_size,
 											axis_title = config$axis_title,
 											legend_title = config$legend_title,
 											legend_position = config$legend_position,
-											legend_direction = config$legend_direction
-											) {
+											legend_direction = config$legend_direction) {
 
 	set_geoms_defaults(base_family = base_family)
 

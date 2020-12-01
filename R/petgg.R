@@ -2,14 +2,13 @@
 #' @import ggplot2
 
 petgg <- function(base_size = config$base_size,
-												base_family = config$base_family,
-												base_line_size = config$base_line_size,
-												base_rect_size = config$base_rect_size,
-												axis_title = config$axis_title,
-												legend_title = config$legend_title,
-												legend_position = config$legend_position,
-												legend_direction = config$legend_direction
-												) {
+									base_family = config$base_family,
+									base_line_size = config$base_line_size,
+									base_rect_size = config$base_rect_size,
+									axis_title = config$axis_title,
+									legend_title = config$legend_title,
+									legend_position = config$legend_position,
+									legend_direction = config$legend_direction) {
 
 	half_line <- base_size / 2L
 
@@ -123,9 +122,9 @@ petgg <- function(base_size = config$base_size,
 		legend.text.align = NULL,
 
 		legend.title = if(legend_title) {
-			ggplot2::element_blank()
-		} else {
 			ggplot2::element_text(size = ggplot2::rel(0.8))
+		} else {
+			ggplot2::element_blank()
 		},
 
 		legend.title.align = NULL,
@@ -187,5 +186,5 @@ petgg <- function(base_size = config$base_size,
 
 		complete = TRUE
 	)
-	return(t)
+	t
 }

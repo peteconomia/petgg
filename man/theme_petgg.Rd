@@ -15,9 +15,9 @@ petgg::theme_petgg()
 
 \item{base_rect_size}{is a numeric, base size for rect elements. Default is \code{0.5}}
 
-\item{axis_title}{is a bool, \code{TRUE} shows the axis title, \code{FALSE} hides. Default is \code{FALSE}}
+\item{axis_title}{is a logical, \code{TRUE} shows the axis title, \code{FALSE} hides. Default is \code{FALSE}}
 
-\item{legend_title}{is bool, \code{TRUE} show the legend title. Default is \code{FALSE}}
+\item{legend_title}{is a logical, \code{TRUE} show the legend title. Default is \code{FALSE}}
 
 \item{legend_position}{is a character, control legend position. Default is \code{"bottom"}}
 }

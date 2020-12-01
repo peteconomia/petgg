@@ -2,6 +2,7 @@
 
 export(geom_bar)
 export(geom_col)
+export(get_colors)
 export(position_dodge)
 export(reset)
 export(scale_color_discrete)

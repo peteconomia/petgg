@@ -7,5 +7,5 @@
 set_geoms_defaults(base_family)
 }
 \description{
-Config geoms
+configure geoms
 }
