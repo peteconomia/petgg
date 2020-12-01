@@ -47,7 +47,7 @@ são setadas para o tema padrão.
 
 ## Configurações
 
-Por padrão `petgg` não mostra o nome dos eixos e título da legenda.
+Por padrão o tema não mostra o nome dos eixos e título da legenda.
 Espaço ao redor do gráfico foi removido para aumentar a visibilidade
 
 ### Tamanho da fonte
@@ -178,3 +178,9 @@ ggplot(economics_long, aes(date, value01, colour = variable)) +
 Para aplicar o tema para uma plotagem específica utilize
 `petgg::theme_petgg()`. A função aceita os mesmos argumentos de
 `petgg::set_theme()`
+
+``` r
+ggplot(mpg) + 
+    geom_point(aes(x = displ, y = hwy, color = class)) +
+    theme_petgg()
+```

@@ -39,7 +39,7 @@ Para voltar ao tema inicial use `petgg::reset()`, não é um reset total, as cor
 
 ## Configurações
 
-Por padrão `petgg` não mostra o nome dos eixos e título da legenda. Espaço ao redor do gráfico foi removido para aumentar a visibilidade
+Por padrão o tema não mostra o nome dos eixos e título da legenda. Espaço ao redor do gráfico foi removido para aumentar a visibilidade
 
 ### Tamanho da fonte
 
@@ -146,9 +146,7 @@ ggplot(economics_long, aes(date, value01, colour = variable)) +
 
 Para aplicar o tema para uma plotagem específica utilize `petgg::theme_petgg()`. A função aceita os mesmos argumentos de `petgg::set_theme()`
 
-```{r include=FALSE}
-petgg::reset()
-
+```{r eval=F}
 ggplot(mpg) + 
 	geom_point(aes(x = displ, y = hwy, color = class)) +
 	theme_petgg()
