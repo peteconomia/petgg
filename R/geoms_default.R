@@ -6,8 +6,8 @@ set_geoms_defaults <- function(base_family) {
 
 	geoms <- gsub("geom_", "", ls(pattern = '^geom_', env = as.environment('package:ggplot2')))
 
-	primary_color <- unlist(pallete[["main"]][8])[1]
-	secondary_color <- unlist(pallete[["main"]][8])[6]
+	primary_color <- unlist(get_palette()$colors[1])
+	secondary_color <- unlist(get_palette()$secondary)
 
 	for(geom in geoms[!geoms %in% c(
 		"bin2d",
