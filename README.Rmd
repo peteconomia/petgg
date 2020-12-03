@@ -56,8 +56,6 @@ ggplot(mpg) +
 	geom_point(aes(x = displ, y = hwy, color = class))
 ```
 
-O tamanho da legenda é relativo a `base_size`
-
 ### Fontes
 
 `base_family` é a família da fonte.
@@ -127,7 +125,7 @@ ggplot(economics_long, aes(date, value01, colour = variable)) +
 ```
 
 
-### Orientaçao da Legenda
+### Orientação da Legenda
 
 `legend_direction` argumento controla a orientação da legenda.
 

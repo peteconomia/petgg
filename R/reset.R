@@ -5,4 +5,11 @@
 #' petgg::reset()
 #' @export
 
-reset <- function() ggplot2::theme_set(theme_grey())
+reset <- function(colors = FALSE) {
+	ggplot2::theme_set(theme_grey())
+	if (colors) {
+		if(exists("petgg_palette")) {
+			petgg_palette <<- NULL
+		}
+	}
+}

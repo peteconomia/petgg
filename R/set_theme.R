@@ -27,7 +27,12 @@ set_theme <- function(base_size = config$base_size,
 											axis_title = config$axis_title,
 											legend_title = config$legend_title,
 											legend_position = config$legend_position,
-											legend_direction = config$legend_direction) {
+											legend_direction = config$legend_direction,
+											palette = NULL) {
+	# petgg_pallete is global var
+	if(!is.null(palette)) {
+		petgg_palette <<- palette
+	}
 
 	set_geoms_defaults(base_family = base_family)
 

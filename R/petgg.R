@@ -109,7 +109,7 @@ petgg <- function(base_size = config$base_size,
 
 		legend.background = ggplot2::element_blank(),
 
-		legend.spacing = ggplot2::unit(20L, "pt"),
+		legend.spacing = ggplot2::unit(2 * half_line, "pt"),
 		legend.spacing.x = ggplot2::unit(4L, "pt"),
 		legend.spacing.y = NULL,
 
@@ -118,11 +118,11 @@ petgg <- function(base_size = config$base_size,
 		legend.key.height = NULL,
 		legend.key.width = NULL,
 
-		legend.text = ggplot2::element_text(size = ggplot2::rel(0.8)),
+		legend.text = ggplot2::element_text(size = ggplot2::rel(1)),
 		legend.text.align = NULL,
 
 		legend.title = if(legend_title) {
-			ggplot2::element_text(size = ggplot2::rel(0.8))
+			ggplot2::element_text(size = ggplot2::rel(1))
 		} else {
 			ggplot2::element_blank()
 		},
@@ -132,8 +132,7 @@ petgg <- function(base_size = config$base_size,
 		legend.position = legend_position,
 		legend.direction = legend_direction,
 		legend.justification = NULL,
-		legend.margin = ggplot2::margin(t = 6L, r = 0L, b = 6L, l = 0L, "pt"),
-
+		legend.margin = ggplot2::margin(half_line, half_line, half_line, half_line),
 		legend.box = "horizontal",
 		legend.box.margin = NULL,
 		legend.box.background = NULL,

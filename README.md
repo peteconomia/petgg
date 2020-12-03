@@ -67,8 +67,6 @@ ggplot(mpg) +
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
-O tamanho da legenda é relativo a `base_size`
-
 ### Fontes
 
 `base_family` é a família da fonte.
@@ -156,7 +154,7 @@ ggplot(economics_long, aes(date, value01, colour = variable)) +
 
 ![](README_files/figure-gfm/unnamed-chunk-9-1.png)<!-- -->
 
-### Orientaçao da Legenda
+### Orientação da Legenda
 
 `legend_direction` argumento controla a orientação da legenda.
 
