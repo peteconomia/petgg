@@ -20,7 +20,9 @@ set_geoms_defaults <- function(base_family) {
 		"sf_label",
 		"sf_text"
 	)]) {
-		ggplot2::update_geom_defaults(geom, list(colour = primary_color, fill = primary_color))
+		ggplot2::update_geom_defaults(
+			geom,
+			list(colour = primary_color, fill = primary_color))
 	}
 
 	# geoms remove color
@@ -39,7 +41,13 @@ set_geoms_defaults <- function(base_family) {
 	}
 
 	for(geom in c("line", "point", "vline", "hline", "smooth", "density", "path")) {
-		ggplot2::update_geom_defaults(geom, list(size = 1.1))
+		ggplot2::update_geom_defaults(geom, list(size = config$geoms$line$size))
+	}
+
+	for(geom in c("rect")) {
+		ggplot2::update_geom_defaults(
+			geom, list(fill = config$palette$shadow, colour = NA, alpha = config$alpha)
+		)
 	}
 
 	for(geom in c("smooth")) {
@@ -47,7 +55,9 @@ set_geoms_defaults <- function(base_family) {
 	}
 
 	for(geom in c("text", "label")) {
-		ggplot2::update_geom_defaults(geom, list(colour = "black", family = base_family, vjust = -1))
+		ggplot2::update_geom_defaults(
+			geom, list(colour = config$text_color, family = base_family)
+		)
 	}
 
 }

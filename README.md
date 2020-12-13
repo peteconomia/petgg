@@ -182,3 +182,36 @@ ggplot(mpg) +
     geom_point(aes(x = displ, y = hwy, color = class)) +
     theme_petgg()
 ```
+
+## `geom_bar` e `geom_col` `gap`
+
+`gap` argumento controla o espaço entre as barras. É útil quando as
+barras são colocada lado a lado representando um combinação de varáveis.
+
+> character
+
+Valores possíveis: `"s"` (pequeno), `"m"` (médio), `"b"` (grande)
+
+``` r
+petgg::set_theme()
+
+ggplot(diamonds) + 
+    geom_bar(aes(x = cut, fill = clarity), position = "dodge", gap = "s")
+```
+
+![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
+
+## Cores
+
+``` r
+petgg::colors # paleta de cores
+```
+
+    ## [1] "#023E8A" "#0077B6" "#0096C7" "#00B4D8" "#48CAE4" "#90E0EF" "#ADE8F4"
+    ## [8] "#CAF0F8"
+
+``` r
+petgg::alpha # transparência
+```
+
+    ## [1] 0.1

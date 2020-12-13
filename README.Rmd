@@ -150,3 +150,28 @@ ggplot(mpg) +
 	theme_petgg()
 ```
 
+## `geom_bar` e `geom_col` `gap`
+
+`gap` argumento controla o espaço entre as barras. É útil quando as barras são colocada lado a lado representando um combinação de varáveis.
+
+> character
+
+Valores possíveis: `"s"` (pequeno), `"m"` (médio), `"b"` (grande)
+
+```{r}
+petgg::set_theme()
+
+ggplot(diamonds) + 
+	geom_bar(aes(x = cut, fill = clarity), position = "dodge", gap = "s")
+```
+
+## Cores
+
+```{r}
+petgg::colors # paleta de cores
+```
+
+```{r}
+petgg::alpha # transparência
+```
+

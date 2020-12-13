@@ -4,10 +4,12 @@
 \alias{geom_col}
 \title{reset \code{geom_col}}
 \usage{
-geom_col(..., width = 0.5)
+geom_col(..., width = config$geoms$bar$width, gap = NULL)
 }
 \arguments{
 \item{width}{col width. Default is \code{0.5}}
+
+\item{gap, }{is a character, gap size, \code{"s"} small, \code{"m"} medium or \code{"b"} big. Default is \code{NULL}}
 }
 \description{
 reset \code{geom_col}

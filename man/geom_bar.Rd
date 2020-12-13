@@ -4,10 +4,12 @@
 \alias{geom_bar}
 \title{reset \code{geom_bar}}
 \usage{
-geom_bar(..., width = 0.5)
+geom_bar(..., width = config$geoms$bar$width, gap = NULL)
 }
 \arguments{
 \item{width}{bar width. Default is \code{0.5}}
+
+\item{gap, }{is a character, gap size, \code{"s"} small, \code{"m"} medium or \code{"b"} big. Default is \code{NULL}}
 }
 \description{
 reset \code{geom_bar}
