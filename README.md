@@ -1,7 +1,7 @@
 petgg
 ================
 
-petgg é um tema para o pacote `ggplot2`
+`petgg` é um tema para o pacote `ggplot2`
 
 ## Instalação
 
@@ -10,7 +10,7 @@ instalar o [RTools](https://cran.r-project.org/bin/windows/Rtools/)
 antes.
 
 ``` r
-install.packages("devtools")
+# install.packages("devtools")
 devtools::install_github("peteconomia/petgg")
 ```
 
@@ -41,9 +41,9 @@ ggplot(mpg) +
     geom_point(aes(x = displ, y = hwy, color = class))
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- --> Para voltar
-ao tema inicial use `petgg::reset()`, não é um reset total, as cores não
-são setadas para o tema padrão.
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+Para voltar ao tema inicial use `petgg::reset()`
 
 ## Configurações
 
@@ -186,7 +186,8 @@ ggplot(mpg) +
 ## `geom_bar` e `geom_col` `gap`
 
 `gap` argumento controla o espaço entre as barras. É útil quando as
-barras são colocada lado a lado representando um combinação de varáveis.
+barras são colocada lado a lado (`position = "dodge"`) representando um
+combinação de variáveis e é necessário ganhar espaço.
 
 > character
 
@@ -201,17 +202,17 @@ ggplot(diamonds) +
 
 ![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
-## Cores
+## Configurações padrão
 
 ``` r
-petgg::colors # paleta de cores
+petgg::colors # acessa a paleta de cores padrão do tema
 ```
 
     ## [1] "#023E8A" "#0077B6" "#0096C7" "#00B4D8" "#48CAE4" "#90E0EF" "#ADE8F4"
     ## [8] "#CAF0F8"
 
 ``` r
-petgg::alpha # transparência
+petgg::alpha # transparência padrão do tema
 ```
 
     ## [1] 0.1
