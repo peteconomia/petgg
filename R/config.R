@@ -1,6 +1,6 @@
 config <- list(
 	base_size = 12,
-	base_family = "Helvetica",
+	base_family = "EB Garamond",
 	base_line_size = 0.5,
 	base_rect_size = 0.5,
 	axis_title = FALSE,

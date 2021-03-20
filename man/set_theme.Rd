@@ -20,6 +20,12 @@ petgg::set_theme()
 \item{legend_title}{is a logical, \code{TRUE} show the legend title. Default is \code{FALSE}}
 
 \item{legend_position}{is a character, control legend position. Default is \code{"bottom"}}
+
+\item{legend_direction}{is a character, "verical" or "horizontal". Default is \code{"horizontal"}}
+
+\item{palette, }{is a character vector, define the color palette. Hexadecimal format.}
+
+\item{load_font, }{is a logical, load font using extrafont package. Default is \code{"TRUE"}}
 }
 \description{
 set petgg as default [ggplot2] theme

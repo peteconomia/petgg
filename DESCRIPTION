@@ -1,7 +1,7 @@
 Package: petgg
 Type: Package
 Title: ggplot2 theme
-Version: 0.2.0
+Version: 0.3.0
 Author: Pedro Castro
 Maintainer: Pedro Castro <pdesacastro@gmail.com>
 Description: ggplot2 theme
@@ -9,5 +9,4 @@ License: MIT
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.1
-Imports: ggplot2,
-Suggests: extrafont
+Imports: ggplot2, extrafont

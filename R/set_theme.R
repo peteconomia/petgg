@@ -7,6 +7,9 @@
 #' @param axis_title is a logical, \code{TRUE} shows the axis title, \code{FALSE} hides. Default is \code{FALSE}
 #' @param legend_position is a character, control legend position. Default is \code{"bottom"}
 #' @param legend_title is a logical, \code{TRUE} show the legend title. Default is \code{FALSE}
+#' @param legend_direction is a character, "verical" or "horizontal". Default is \code{"horizontal"}
+#' @param palette, is a character vector, define the color palette. Hexadecimal format.
+#' @param load_font, is a logical, load font using extrafont package. Default is \code{"TRUE"}
 #' @import ggplot2
 #' @usage
 #' petgg::set_theme()
@@ -28,10 +31,16 @@ set_theme <- function(base_size = config$base_size,
 											legend_title = config$legend_title,
 											legend_position = config$legend_position,
 											legend_direction = config$legend_direction,
-											palette = NULL) {
+											palette = NULL,
+											load_font = TRUE) {
+	
 	# petgg_pallete is global var
-	if(!is.null(palette)) {
+	if (!is.null(palette)) {
 		petgg_palette <<- palette
+	}
+
+	if (load_font) {
+		load_font(base_family = base_family, prompt = FALSE)
 	}
 
 	set_geoms_defaults(base_family = base_family)

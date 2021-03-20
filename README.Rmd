@@ -63,7 +63,7 @@ ggplot(mpg) +
 
 > `character`
 
-> Padrão é `"Helvetica"`
+> Padrão é `"EB Garamond"`
 
 Para listar todas as fontes disponíveis que você pode utilizar:
 
@@ -77,6 +77,8 @@ ggplot(diamonds) +
 	geom_bar(aes(x = cut, fill = clarity), position = "dodge") +
 	labs(title = "Courier Fonte")
 ```
+
+`load_font` argumento carrega fontes pelo pacote `extrafont`. Padrão é `TRUE`. Para importar fontes execute `extrafont::font_import(prompt = FALSE)`
 
 ### Título dos eixos
 

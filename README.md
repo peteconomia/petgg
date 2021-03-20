@@ -23,15 +23,6 @@ library(ggplot2)
 library(petgg)
 ```
 
-    ## 
-    ## Attaching package: 'petgg'
-
-    ## The following objects are masked from 'package:ggplot2':
-    ## 
-    ##     geom_bar, geom_col, position_dodge, scale_color_discrete,
-    ##     scale_colour_discrete, scale_colour_ordinal, scale_fill_discrete,
-    ##     scale_fill_ordinal
-
 A função `petgg::set_theme()` aplica o tema.
 
 ``` r
@@ -73,7 +64,7 @@ ggplot(mpg) +
 
 > `character`
 
-> Padrão é `"Helvetica"`
+> Padrão é `"EB Garamond"`
 
 Para listar todas as fontes disponíveis que você pode utilizar:
 
@@ -81,16 +72,42 @@ Para listar todas as fontes disponíveis que você pode utilizar:
 names(pdfFonts())
 ```
 
-    ##  [1] "serif"                "sans"                 "mono"                
-    ##  [4] "AvantGarde"           "Bookman"              "Courier"             
-    ##  [7] "Helvetica"            "Helvetica-Narrow"     "NewCenturySchoolbook"
-    ## [10] "Palatino"             "Times"                "URWGothic"           
-    ## [13] "URWBookman"           "NimbusMon"            "NimbusSan"           
-    ## [16] "URWHelvetica"         "NimbusSanCond"        "CenturySch"          
-    ## [19] "URWPalladio"          "NimbusRom"            "URWTimes"            
-    ## [22] "ArialMT"              "Japan1"               "Japan1HeiMin"        
-    ## [25] "Japan1GothicBBB"      "Japan1Ryumin"         "Korea1"              
-    ## [28] "Korea1deb"            "CNS1"                 "GB1"
+    ##  [1] "serif"                         "sans"                         
+    ##  [3] "mono"                          "AvantGarde"                   
+    ##  [5] "Bookman"                       "Courier"                      
+    ##  [7] "Helvetica"                     "Helvetica-Narrow"             
+    ##  [9] "NewCenturySchoolbook"          "Palatino"                     
+    ## [11] "Times"                         "URWGothic"                    
+    ## [13] "URWBookman"                    "NimbusMon"                    
+    ## [15] "NimbusSan"                     "URWHelvetica"                 
+    ## [17] "NimbusSanCond"                 "CenturySch"                   
+    ## [19] "URWPalladio"                   "NimbusRom"                    
+    ## [21] "URWTimes"                      "ArialMT"                      
+    ## [23] "Japan1"                        "Japan1HeiMin"                 
+    ## [25] "Japan1GothicBBB"               "Japan1Ryumin"                 
+    ## [27] "Korea1"                        "Korea1deb"                    
+    ## [29] "CNS1"                          "GB1"                          
+    ## [31] "EB Garamond"                   "EB Garamond ExtraBold"        
+    ## [33] "EB Garamond Medium"            "EB Garamond SemiBold"         
+    ## [35] "Fira Code"                     "Fira Code Light"              
+    ## [37] "Fira Code Medium"              "Fira Code Retina"             
+    ## [39] "Fira Mono"                     "Fira Mono Medium"             
+    ## [41] "Fira Sans"                     "Fira Sans Book"               
+    ## [43] "Fira Sans Eight"               "Fira Sans ExtraBold"          
+    ## [45] "Fira Sans ExtraLight"          "Fira Sans Four"               
+    ## [47] "Fira Sans Hair"                "Fira Sans Heavy"              
+    ## [49] "Fira Sans Light"               "Fira Sans Medium"             
+    ## [51] "Fira Sans SemiBold"            "Fira Sans Thin"               
+    ## [53] "Fira Sans Two"                 "Fira Sans Ultra"              
+    ## [55] "Fira Sans UltraLight"          "Font Awesome 5 Brands Regular"
+    ## [57] "Font Awesome 5 Free Regular"   "Font Awesome 5 Free Solid"    
+    ## [59] "Inconsolata"                   "JetBrains Mono"               
+    ## [61] "JetBrains Mono ExtraBold"      "JetBrains Mono Medium"        
+    ## [63] "Liberation Mono"               "Liberation Sans"              
+    ## [65] "Liberation Serif"              "Open Sans"                    
+    ## [67] "Open Sans ExtraBold"           "Open Sans Light"              
+    ## [69] "Open Sans SemiBold"            "Open Sans Condensed Light"    
+    ## [71] "Soleil"                        "Times New Roman"
 
 ``` r
 petgg::set_theme(base_family = "Courier")
@@ -101,6 +118,10 @@ ggplot(diamonds) +
 ```
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+`load_font` argumento carrega fontes pelo pacote `extrafont`. Padrão é
+`TRUE`. Para importar fontes execute
+`extrafont::font_import(prompt = FALSE)`
 
 ### Título dos eixos
 
