@@ -20,9 +20,13 @@ set_geoms_defaults <- function(base_family) {
 		"sf_label",
 		"sf_text"
 	)]) {
-		ggplot2::update_geom_defaults(
-			geom,
-			list(colour = primary_color, fill = primary_color))
+		tryCatch(
+			ggplot2::update_geom_defaults(
+				geom,
+				list(colour = primary_color, fill = primary_color)
+			),
+			error = function(e) {}
+		)
 	}
 
 	# geoms remove color

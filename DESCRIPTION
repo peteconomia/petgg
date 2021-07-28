@@ -1,7 +1,7 @@
 Package: petgg
 Type: Package
 Title: ggplot2 theme
-Version: 0.3.0
+Version: 0.3.1
 Author: Pedro Castro
 Maintainer: Pedro Castro <pdesacastro@gmail.com>
 Description: ggplot2 theme

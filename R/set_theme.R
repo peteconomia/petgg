@@ -1,7 +1,7 @@
 #' @title set petgg theme
 #' @description set petgg as default [ggplot2] theme
 #' @param base_size is a numeric, font size in pts. Default is \code{12}
-#' @param base_family is a character, font family. Default is \code{"Helvetica"}
+#' @param base_family is a character, font family. Default is \code{"EB Garamond"}
 #' @param base_line_size is a numeric, base size for line elements. Default is \code{0.5}
 #' @param base_rect_size is a numeric, base size for rect elements. Default is \code{0.5}
 #' @param axis_title is a logical, \code{TRUE} shows the axis title, \code{FALSE} hides. Default is \code{FALSE}
